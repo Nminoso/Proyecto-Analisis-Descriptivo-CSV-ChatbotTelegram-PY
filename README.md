@@ -1,28 +1,77 @@
-🤖 Telegram Data Bot - Procesador Dinámico de Archivos .CSV
-Este proyecto consiste en un Chatbot de Telegram diseñado para recibir, leer y analizar estructuras de datos variables. Desarrollado como parte del Módulo 5: Aprendizaje Automático en el Técnico en IA de INFOTEP, con un enfoque en la manipulación técnica de archivos y lógica de programación.
-🚀 Funcionalidades Principales
-•	Procesamiento de Archivos CSV: El bot es capaz de recibir archivos .csv enviados por el usuario a través del chat.
-•	Adaptabilidad de Columnas: Implementa lógica dinámica para interpretar diferentes nombres de encabezados (ej. "Venta", "Total", "Ingresos") sin necesidad de reconfigurar el código.
-•	Análisis Automático: Calcula totales, promedios e identifica valores máximos/mínimos según el archivo proporcionado.
-•	Gestión de Sesiones: Mantiene una interacción fluida con el usuario mediante la API de Telegram.
-•	Entorno Aislado: Configurado mediante venv para asegurar que las dependencias no entren en conflicto con otros proyectos.
-🛠️ Stack Tecnológico
-•	Lenguaje: Python 3.11.9
-•	Interfaz de Bot: python-telegram-bot (Librería principal para la comunicación con Telegram).
-•	Manipulación de Datos: pandas / csv (Para el parsing y análisis de los archivos).
-•	Entorno: Visual Studio Code / PowerShell.
-📂 Estructura del Proyecto
-⚙️ Instalación y Ejecución
-1.	Navegar a la carpeta del proyecto:
-2.	Activar el entorno virtual:
-3.	Instalar librerías necesarias: Si experimentas errores con el launcher de pip, utiliza:
-4.	Ejecutar el Bot:
-📊 Casos de Uso Testeados
-El sistema ha sido validado con los siguientes tipos de datos:
-•	Ventas por Empleado: Validación de strings y montos básicos.
-•	Ventas por Producto: Prueba de flexibilidad en nombres de columnas.
-•	Rendimiento de Sucursales: Manejo de valores numéricos de gran escala.
-•	Tráfico Web: Análisis de variabilidad de datos por días.
-________________________________________
-Autor: Nelson Miñoso estudiante del Técnico en IA - TEOREMA (INFOTEP) 
-Módulo: Aprendizaje Automático (Fase de Procesamiento de Datos)
+# DataSimpleBot
+
+Simple data Telegram bot built with **python-telegram-bot (v 1.0)**.
+
+---
+
+## 📦 Project files
+
+- `botdatosimple.py` – Main bot application. Loads `BotDataSimple_Token` from a `.env` file and starts polling.
+- `requirements.txt` – Project dependencies (pinned for Windows stability).
+- `.env` – Environment variables (not committed to git).
+- `README.md` – Setup and usage instructions.
+
+---
+
+## 🧰 Requirements
+
+- **Python 3.11.x (required)**
+- Windows, macOS, or Linux
+- A Telegram Bot Token (from @BotFather)
+
+⚠️ **Important**
+- Python **3.12+ (including 3.13)** is **not supported** due to dependency wheel issues on Windows.
+- This project is tested with **Python 3.11.9**.
+
+## Token
+BotDataSimple_Token=your_telegram_bot_token_here
+
+---
+
+## ⚙️ Setup (virtual environment)
+
+Using a virtual environment is strongly recommended.
+
+### Windows (PowerShell)
+
+```powershell
+py -3.11 -m venv venv
+.\venv\Scripts\Activate.ps1
+python -m pip install --upgrade pip setuptools wheel
+pip install -r requirements.txt
+```
+
+Command Prompt (cmd.exe):
+
+```cmd
+py -3.11 -m venv venv
+.\venv\Scripts\activate
+python -m pip install --upgrade pip setuptools wheel
+pip install -r requirements.txt
+```
+
+macOS / Linux (bash/zsh):
+
+```bash
+python3.11 -m venv venv
+source venv/bin/activate
+python -m pip install --upgrade pip setuptools wheel
+pip install -r requirements.txt
+```
+
+## Running the bot
+
+1. Ensure `BotDataSimple_Token` is set in a `.env` file in the project root.
+2. Activate your virtual environment (see above).
+3. Run:
+
+```bash
+py botdatosimple.py
+```
+
+You should see a console message ("Bot en ejecución esperando archivos CSV...") and the bot will respond to `/start` and simple messages.
+
+## Notes
+
+- Requires Python 3.10+ (recommended).
+- The bot uses `python-dotenv` to load environment variables from a `.env` file.
