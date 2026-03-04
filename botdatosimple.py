@@ -15,7 +15,7 @@ load_dotenv()
 
 # Obtener el token y la URL de Render de forma segura
 TOKEN = os.getenv("BotDataSimple_Token")
-RENDER_URL = os.getenv("URL_RENDER", "https://Proyecto-Analisis-Descriptivo-CSV-ChatbotTelegram-PY.onrender.com")
+RENDER_URL = os.getenv("URL_RENDER", "https://proyecto-analisis-descriptivo-csv.onrender.com")
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text(
